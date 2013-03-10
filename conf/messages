@@ -1,0 +1,8 @@
+feedback=感想
+username=ユーザ名
+leave.feedback=感想を書いて下さい。
+send=送信
+recent.feedback=最近の感想
+feedback.left.by={0}の感想が送信されました。
+constraint.required=必須項目
+error.required=この項目は必ず入力して下さい。

@@ -1,0 +1,29 @@
+@(feedback: Form[Feedback], allFeedback: Seq[Feedback], status: Option[String] = None)
+
+@import helper._
+
+@main(Messages("feedback")) {
+
+    <h2>@Messages("leave.feedback")</h2>
+
+    @for(msg <- status) {
+      <div class="status">@msg</div>
+    }
+
+    @form(routes.Application.leaveFeedback(), 'id -> "feedbackform") {
+      @inputText(feedback("username"))
+      @inputText(feedback("feedback"))
+      <input type="submit" value="@Messages("send")"/>
+    }
+
+    <h2>@Messages("recent.feedback")</h2>
+
+    <ul class="all-feedback">
+    @for(f <- allFeedback) {
+      <li>
+        <div class="feedback">@f.feedback</div>
+        <div class="username">@f.username</div>
+      </li>
+    }
+    </ul>
+}
